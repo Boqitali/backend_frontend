@@ -4,9 +4,10 @@ import { AppModule } from "./app.module";
 async function start() {
   const app = await NestFactory.create(AppModule);
 
-  // .env fayldan yoki 3003 dan port olish
-  const PORT = process.env.API_PORT || process.env.PORT || 3003;
+  // CORS yoqish
+  app.enableCors();
 
+  const PORT = process.env.PORT || 3000;
   await app.listen(PORT, () => {
     console.log(`Server started at: http://localhost:${PORT}`);
   });

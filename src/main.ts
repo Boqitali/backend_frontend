@@ -4,7 +4,7 @@ import { AppModule } from "./app.module";
 async function start() {
   const app = await NestFactory.create(AppModule);
 
-  // CORS yoqish
+  
   app.enableCors();
 
   const PORT = process.env.PORT || 3000;
